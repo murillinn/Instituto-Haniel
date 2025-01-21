@@ -22,8 +22,8 @@ body {
 }
 
 header {
-    background: var(--accent-color);
-    color: var(--secondary-color);
+    background: var(--secondary-color);
+    color: var(--accent-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,16 +34,34 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.asas {
+    display: flex;
+    align-items: center;
+    gap: 1.0rem; 
+    width: 1000px;
+}
+
+.asas img{
+    height: 60px;
+}
+
 header h1 {
     font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; 
+    color: var(--accent-color);
+    margin: 0;
 }
 
 header span {
     color: var(--primary-color);
 }
 
+
+
 nav a {
-    color: var(--secondary-color);
+    color: var(--accent-color);
     text-decoration: none;
     margin: 0 1rem;
     transition: color 0.3s ease;
@@ -154,7 +172,7 @@ form button {
 
 form button:hover {
     background: var(--accent-color);
-    color: var(--secondary-color);
+    color: var(--background-color);
 }
 
 footer {
@@ -168,7 +186,7 @@ footer {
 
 #timeline {
     background-color: var(--background-color);
-    color: var(--text-color);
+    color: var(--background-color);
     padding: 40px 20px;
     margin-top: 40px;
     border-radius: 8px;
@@ -393,7 +411,7 @@ form button:hover {
 }
 
 .image-gallery img {
-    width: 200px;
+    width: 300px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -422,8 +440,8 @@ form button:hover {
 }
 
 main {
-    width: 90%; 
-    max-width: 1200px; 
+    width: 100%; 
+    max-width: 1300px; 
     padding: 20px;
     background-color: #333333;
     margin: 20px auto; 
@@ -431,15 +449,15 @@ main {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Ajustes para telas menores */
+
 @media (max-width: 768px) {
     main {
-        width: 95%; /* Ajusta para preencher mais a tela */
+        width: 95%; 
         padding: 15px;
     }
 }
 
-/* Ajustes para telas muito pequenas */
+
 @media (max-width: 480px) {
     main {
         padding: 10px;
@@ -459,3 +477,9 @@ main {
     filter: blur(10px);
     transform: scale(0.9, 0.9);
 }
+
+.links{
+    color: var(--secondary-color);
+}
+
+
