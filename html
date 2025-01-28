@@ -13,14 +13,16 @@
             <h1>Instituto <span>HANIEL</span></h1>
         </div> <div class="asas">
             <img src="logo_somenate_as_asas.png" alt="Imagem Inicial" />
-        </div>
-        <nav>
-            <a href="#sobre">Sobre</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#contato">Contato</a>
-            <a href="https://www.instagram.com/institutosocialhaniel/" target="_blank">Instagram</a>
-            <a href="https://www.facebook.com/people/Instituto-Social-Haniel/61559610762906/?is_tour_dismissed" target="_blank">Facebook</a>
-        </nav>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="https://www.instagram.com/institutosocialhaniel/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/people/Instituto-Social-Haniel/61559610762906/?is_tour_dismissed" target="_blank">Facebook</a></li>
+                    <li><a href="cadastro.html" target="_blank">Cadastro</a></li>
+                </ul>
+            </nav>
     </header>
 
     <main>
@@ -117,21 +119,18 @@
             </div>
         </section>
 
-        <section id="contato" class="content">
-            <h3>Entre em Contato</h3>
-            <form>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" placeholder="Seu nome">
+       <form action="processa_formulario.php" method="POST">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" placeholder="Seu e-mail">
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
 
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem"></textarea>
+    <label for="mensagem">Mensagem:</label>
+    <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem" required></textarea>
 
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+    <button type="submit">Enviar</button>
+</form>
     </main>
 
     <footer>
