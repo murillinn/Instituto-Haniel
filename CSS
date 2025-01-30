@@ -34,16 +34,6 @@ header {
     box-shadow: 0 7px 8px rgba(0, 0, 0, 0.1);
 }
 
-.asas {
-    display: flex;
-    align-items: center;
-    gap: 1.0rem; 
-    width: 1000px;
-}
-
-.asas img{
-    height: 60px;
-}
 
 header h1 {
     font-size: 1.8rem;
@@ -59,50 +49,53 @@ header span {
 }
 
 
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: rgb(31, 25, 25);
+    cursor: pointer;
+}
 .navbar ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     list-style: none;
-    gap: 1.5rem; 
+    display: flex;
+    gap: .3rem;
 }
-
-.navbar ul li {
-    margin: 0;
-    transition: transform 0.9s ease, box-shadow 0.7s ease;
-}
-
 .navbar ul li a {
     color: var(--accent-color);
     text-decoration: none;
     font-size: 1rem;
     padding: 0.5rem 1rem;
-
-}
-
-.navbar ul li a:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    border-radius: 5px;
-    scale: 1.2;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.navbar li:hover{
-    transform: scale(1.2);
+.navbar ul li a:hover {
+    background: #fffb00;
+    border-radius: 5px;
+    color: black;
+    transform: translateY(-10px);
 }
-
-
-@media (max-width: 768px) {
+@media (max-width: 775px) {
+    .menu-toggle {
+        display: block;
+    }
     .navbar ul {
         flex-direction: column;
-        gap: 1rem;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: var(--secondary-color);
+        padding: 10px 0;
+        text-align: center;
+        display: none;
     }
 
-    .navbar ul li a {
-        display: block;
-        text-align: center;
+    .navbar ul.active {
+        display: flex;
     }
 }
+
 
 .hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -145,7 +138,7 @@ header span {
 }
 
 .hero .btn:hover {
-    background: var(--primary-color);
+    background: linear-gradient(135deg, #000000, #fffb00);
 }
 
 .content {
@@ -401,7 +394,7 @@ form button {
 }
 
 form button:hover {
-    background: var(--accentcolor);
+    background: linear-gradient(135deg, #000000, #fffb00);
     color: var(--secondary-color);
 }
 
@@ -515,3 +508,6 @@ main {
     color: var(--secondary-color);
 }
 
+.links:hover{
+    color: yellow
+}
