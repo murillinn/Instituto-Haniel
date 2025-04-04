@@ -1,0 +1,135 @@
+document.addEventListener('DOMContentLoaded', function() {
+   
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const authForms = document.querySelectorAll('.auth-form');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.getAttribute('data-tab');
+            
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+         
+            authForms.forEach(form => form.classList.remove('active'));
+            document.getElementById(`${tabId}-form`).classList.add('active');
+        });
+    });
+    
+
+    const passwordToggles = document.querySelectorAll('.password-toggle');
+    passwordToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const input = toggle.previousElementSibling;
+            const icon = toggle.querySelector('.toggle-icon');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.textContent = '🙈';
+            } else {
+                input.type = 'password';
+                icon.textContent = '👁️';
+            }
+        });
+    });
+    
+    
+    const passwordInput = document.getElementById('register-password');
+    if (passwordInput) {
+        passwordInput.addEventListener('input', function() {
+            const strengthBars = document.querySelectorAll('.strength-bar');
+            const strengthText = document.querySelector('.strength-text');
+            const password = this.value;
+            let strength = 0;
+            
+            
+            if (password.length > 0) strength++;
+            if (password.length >= 8) strength++;
+            
+       
+            if (/[!@#$%^&*(),.?":{}|<>]/.test(password)) strength++;
+            
+            if (/\d/.test(password) && /[A-Z]/.test(password)) strength++;
+            
+     
+            strengthBars.forEach((bar, index) => {
+                bar.style.backgroundColor = index < strength ? 
+                    (strength < 3 ? '#e74c3c' : strength === 3 ? '#f39c12' : '#2ecc71') : 
+                    '#eee';
+            });
+            
+        
+            const strengthMessages = ['Muito fraca', 'Fraca', 'Média', 'Forte', 'Muito forte'];
+            strengthText.textContent = strengthMessages[strength] || '';
+        });
+    }
+    
+
+    const confirmPassword = document.getElementById('register-confirm-password');
+    if (confirmPassword) {
+        confirmPassword.addEventListener('input', function() {
+            const password = document.getElementById('register-password').value;
+            if (this.value !== password) {
+                this.setCustomValidity('As senhas não coincidem');
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+    }
+    
+
+    const recoveryModal = document.getElementById('recovery-modal');
+    const forgotPassword = document.querySelector('.forgot-password');
+    const closeModal = document.querySelector('.close-modal');
+    
+    if (forgotPassword) {
+        forgotPassword.addEventListener('click', (e) => {
+            e.preventDefault();
+            recoveryModal.style.display = 'block';
+        });
+    }
+    
+    if (closeModal) {
+        closeModal.addEventListener('click', () => {
+            recoveryModal.style.display = 'none';
+        });
+    }
+    
+    window.addEventListener('click', (e) => {
+        if (e.target === recoveryModal) {
+            recoveryModal.style.display = 'none';
+        }
+    });
+    
+
+    const forms = document.querySelectorAll('.auth-form, #recovery-form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+           
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Processando...';
+            
+  
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                if (this.id === 'recovery-form') {
+                    recoveryModal.style.display = 'none';
+                    alert('Um e-mail com instruções foi enviado para o endereço fornecido.');
+                } else if (this.id === 'login-form') {
+                    alert('Login realizado com sucesso! Redirecionando...');
+  
+                } else if (this.id === 'register-form') {
+                    alert('Cadastro realizado com sucesso! Faça login para continuar.');
+                    document.querySelector('.tab-btn[data-tab="login"]').click();
+                }
+            }, 1500);
+        });
+    });
+});
