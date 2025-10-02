@@ -1,0 +1,177 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Filtros de cursos
+    const categoriaFilter = document.getElementById('categoria');
+    const nivelFilter = document.getElementById('nivel');
+    const buscaInput = document.getElementById('busca');
+    const cursoCards = document.querySelectorAll('.curso-card');
+    
+    // Função para filtrar cursos
+    function filterCursos() {
+        const categoriaValue = categoriaFilter.value;
+        const nivelValue = nivelFilter.value;
+        const buscaValue = buscaInput.value.toLowerCase();
+        
+        cursoCards.forEach(card => {
+            const cardCategoria = card.dataset.categoria;
+            const cardNivel = card.dataset.nivel;
+            const cardTitle = card.querySelector('.curso-card__title').textContent.toLowerCase();
+            const cardDesc = card.querySelector('.curso-card__description').textContent.toLowerCase();
+            
+            const categoriaMatch = categoriaValue === 'todos' || cardCategoria === categoriaValue;
+            const nivelMatch = nivelValue === 'todos' || cardNivel === nivelValue;
+            const buscaMatch = buscaValue === '' || 
+                cardTitle.includes(buscaValue) || 
+                cardDesc.includes(buscaValue);
+            
+            if (categoriaMatch && nivelMatch && buscaMatch) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    
+    // Event listeners para filtros
+    categoriaFilter.addEventListener('change', filterCursos);
+    nivelFilter.addEventListener('change', filterCursos);
+    buscaInput.addEventListener('input', filterCursos);
+    
+    // Inicializar filtros
+    filterCursos();
+});
+
+// Dados dos cursos (pode ser substituído por uma chamada API no futuro)
+const cursosData = {
+  "curso-detalhe-1": {
+    titulo: "Introdução à Tecnologia",
+    imagem: "img/curso-tecnologia.jpg",
+    duracao: "40 horas",
+    nivel: "Iniciante",
+    categoria: "Tecnologia",
+    descricao: "Este curso oferece uma introdução abrangente aos conceitos fundamentais de tecnologia da informação. Os participantes aprenderão sobre hardware, software, sistemas operacionais, redes básicas e segurança digital. O curso é ideal para quem deseja adquirir conhecimentos essenciais para o mercado de trabalho atual.",
+    conteudo: [
+      "Conceitos básicos de hardware e software",
+      "Sistemas operacionais: Windows e Linux",
+      "Pacote Office: Word, Excel e PowerPoint",
+      "Internet e navegação segura",
+      "Redes sociais e comunicação digital",
+      "Segurança da informação básica"
+    ],
+    preRequisitos: "Nenhum conhecimento prévio necessário. Acesso a um computador com internet é recomendado.",
+    investimento: "Grátis para membros da comunidade"
+  },
+  "curso-detalhe-2": {
+    titulo: "Arte e Cultura Comunitária",
+    imagem: "img/curso-artes.jpg",
+    duracao: "60 horas",
+    nivel: "Intermediário",
+    categoria: "Artes",
+    descricao: "Este curso explora o potencial transformador da arte nas comunidades. Os participantes aprenderão técnicas artísticas diversas e como aplicá-las em projetos culturais comunitários. O curso inclui workshops práticos e desenvolvimento de projetos reais em parceria com organizações locais.",
+    conteudo: [
+      "História da arte comunitária",
+      "Técnicas de pintura mural",
+      "Teatro comunitário",
+      "Danças tradicionais",
+      "Produção cultural",
+      "Elaboração de projetos artísticos"
+    ],
+    preRequisitos: "Interesse em arte e cultura. Não é necessário experiência prévia.",
+    investimento: "R$ 150,00 ou bolsas integrais disponíveis"
+  },
+  "curso-detalhe-3": {
+    titulo: "Assistência Social Básica",
+    imagem: "img/curso-assistencia.jpg",
+    duracao: "80 horas",
+    nivel: "Intermediário",
+    categoria: "Assistência Social",
+    descricao: "Curso voltado para capacitação de agentes comunitários e interessados em atuar na área social. Aborda conceitos fundamentais de direitos humanos, políticas públicas e técnicas de atendimento e acolhimento.",
+    conteudo: [
+      "História das políticas sociais no Brasil",
+      "Sistema Único de Assistência Social (SUAS)",
+      "Direitos humanos e cidadania",
+      "Técnicas de entrevista e acolhimento",
+      "Encaminhamentos e rede de proteção",
+      "Elaboração de projetos sociais"
+    ],
+    preRequisitos: "Ensino médio completo. Disponibilidade para atividades práticas.",
+    investimento: "Grátis para moradores da região"
+  },
+  "curso-detalhe-4": {
+    titulo: "Programação Web Básica",
+    imagem: "img/curso-programacao.jpg",
+    duracao: "120 horas",
+    nivel: "Avançado",
+    categoria: "Tecnologia",
+    descricao: "Curso introdutório às tecnologias web essenciais para iniciar uma carreira como desenvolvedor front-end. Os alunos aprenderão HTML, CSS e JavaScript através de projetos práticos e receberão orientação para montar seu portfólio.",
+    conteudo: [
+      "HTML5 e semântica web",
+      "CSS3 e design responsivo",
+      "JavaScript básico",
+      "Bootstrap e frameworks CSS",
+      "Git e controle de versão",
+      "Projeto final: portfólio pessoal"
+    ],
+    preRequisitos: "Conhecimentos básicos de informática. Lógica de programação é um diferencial.",
+    investimento: "R$ 300,00 ou 3x de R$ 100,00"
+  }
+};
+
+// Função para abrir o modal
+function abrirModalCurso(cursoId) {
+  const curso = cursosData[cursoId];
+  if (!curso) return;
+  
+  // Preencher os dados do modal
+  document.getElementById('modalCursoTitulo').textContent = curso.titulo;
+  document.getElementById('modalCursoImagem').src = curso.imagem;
+  document.getElementById('modalCursoImagem').alt = curso.titulo;
+  document.getElementById('modalCursoDuracao').innerHTML = `<i class="far fa-clock"></i> ${curso.duracao}`;
+  document.getElementById('modalCursoNivel').textContent = curso.nivel;
+  document.getElementById('modalCursoCategoria').innerHTML = `<i class="fas fa-tag"></i> ${curso.categoria}`;
+  document.getElementById('modalCursoDescricao').textContent = curso.descricao;
+  document.getElementById('modalCursoPreRequisitos').textContent = curso.preRequisitos;
+  document.getElementById('modalCursoInvestimento').textContent = curso.investimento;
+  
+  // Preencher conteúdo programático
+  const conteudoList = document.getElementById('modalCursoConteudo');
+  conteudoList.innerHTML = '';
+  curso.conteudo.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    conteudoList.appendChild(li);
+  });
+  
+  // Mostrar o modal
+  const modal = document.getElementById('cursoModal');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+// Função para fechar o modal
+function fecharModalCurso() {
+  const modal = document.getElementById('cursoModal');
+  modal.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+// Event listeners para os botões "Saiba mais"
+document.addEventListener('DOMContentLoaded', function() {
+  // Fechar modal ao clicar no botão X
+  document.querySelector('.modal__close').addEventListener('click', fecharModalCurso);
+  
+  // Fechar modal ao clicar fora do conteúdo
+  document.getElementById('cursoModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      fecharModalCurso();
+    }
+  });
+  
+  // Adicionar evento aos botões "Saiba mais"
+  document.querySelectorAll('[href^="#curso-detalhe-"]').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const cursoId = this.getAttribute('href').substring(1);
+      abrirModalCurso(cursoId);
+    });
+  });
+});
