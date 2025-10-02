@@ -3,148 +3,422 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instituto HANIEL</title>
+    <meta name="description" content="Instituto HANIEL - Promovendo educação, pesquisa e inovação para transformar vidas">
+    <meta name="keywords" content="instituto, educação, pesquisa, inovação, social, haniel">
+    <meta name="author" content="Instituto HANIEL">
+    <meta property="og:title" content="Instituto HANIEL">
+    <meta property="og:description" content="Transformando vidas por meio de educação, pesquisa e inovação">
+    <meta property="og:type" content="website">
+    <title>Instituto HANIEL | Transformando Vidas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" as="image">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
-    <header>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
-        <div class="logo">
-            <h1>Instituto <span>HANIEL</span></h1>
-        </div> <div class="asas">
-    
-            <nav class="navbar">
-                <ul id="nav-menu">
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <li><a href="https://www.instagram.com/institutosocialhaniel/" target="_blank">Instagram</a></li>
-                    <li><a href="https://www.facebook.com/people/Instituto-Social-Haniel/61559610762906/?is_tour_dismissed" target="_blank">Facebook</a></li>
-                    <li><a href="cadastro.html">Cadastro/login</a></li>
-                    
-                </ul>
-            </nav>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="logo">
+                    <h1>
+                        <a href="/">
+                            Instituto <span>HANIEL</span>
+                            <span class="sr-only">Página inicial</span>
+                        </a>
+                    </h1>
+                </div>
+
+                <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+
+                <nav class="navbar" aria-label="Navegação principal">
+                    <ul id="nav-menu" class="nav-menu">
+                        <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                        <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                        <li><a href="#atuacao" class="nav-link">Atuação</a></li>
+                        <li><a href="#contato" class="nav-link">Contato</a></li>
+                        <li>
+                            <a href="https://www.instagram.com/institutosocialhaniel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span class="sr-only">Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/people/Instituto-Social-Haniel/61559610762906/?is_tour_dismissed" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span class="sr-only">Facebook</span>
+                            </a>
+                        </li>
+                        <li><a href="cadastro.html" class="btn btn--small">Cadastro</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
 
-    <main>
-       
-        <section class="hero">
-            <h2>Bem-vindo ao Instituto HANIEL</h2>
-            <p>Nosso objetivo é transformar vidas por meio de educação, pesquisa e inovação. Descubra como podemos ajudar você a crescer.</p>
-            <a href="#sobre" class="btn">Saiba Mais</a>
+    <main id="main-content">
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <div class="hero__content">
+                    <h2 id="hero-heading">Bem-vindo ao Instituto HANIEL</h2>
+                    <p class="hero__text">Nosso objetivo é transformar vidas por meio de educação, pesquisa e inovação. Descubra como podemos ajudar você a crescer.</p>
+                    <div class="hero__cta">
+                        <a href="#sobre" class="btn btn--primary">Saiba Mais</a>
+                        <a href="#contato" class="btn btn--outline">Contato</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__overlay"></div>
         </section>
 
-        <section id="sobre" class="content">
-           <main><h3>Sobre Nós</h3>
-            <p class="sobre-nos
-        ">O Instituto HANIEL é uma organização dedicada a promover conhecimento e soluções inovadoras em diversas áreas. Nossa missão é ser um farol de aprendizado, unindo pessoas e ideias para construir um futuro melhor.
-                O Instituto Social Haniel é uma organização dedicada a promover os princípios da Legalidade, Igualdade, Dignidade da Pessoa Humana e Cidadania. Comprometidos em assegurar que todas as atividades sociais estejam fundamentadas na Magna Carta, buscamos garantir tratamento justo e imparcial para todos, preservar a dignidade humana como valor supremo e conscientizar a comunidade sobre seus direitos e deveres.
-            </p></main> 
+        <section id="sobre" class="section" aria-labelledby="sobre-heading">
+            <div class="container">
+                <h2 id="sobre-heading" class="section__title">Sobre Nós</h2>
+                <div class="section__content">
+                    <p class="about-text">O Instituto HANIEL é uma organização dedicada a promover conhecimento e soluções inovadoras em diversas áreas. Nossa missão é ser um farol de aprendizado, unindo pessoas e ideias para construir um futuro melhor.</p>
+                    <p class="about-text">O Instituto Social Haniel é uma organização comprometida com os princípios da Legalidade, Igualdade, Dignidade da Pessoa Humana e Cidadania. Buscamos garantir tratamento justo e imparcial para todos, preservar a dignidade humana como valor supremo e conscientizar a comunidade sobre seus direitos e deveres.</p>
+                </div>
 
-            <div class="image-gallery">
-                <img src="Captura de tela 2025-01-17 144754.png" alt="">
-                <img src="Captura de tela 2025-01-17 144850.png" alt="">
-                <img src="Captura de tela 2025-01-17 144948.png" alt="">
-                <img src="Captura de tela 2025-01-17 153329.png" alt="">
-                <img src="Captura de tela 2025-01-17 153458.png" alt="">
-            </div>
+            
+        </section>
 
-            <section id="timeline" class="content">
-                <h3>Uma Jornada de Compromisso e Impacto</h3>
+        <section id="historia" class="section section--alt" aria-labelledby="historia-heading">
+            <div class="container">
+                <h2 id="historia-heading" class="section__title">Nossa Jornada</h2>
                 <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="circle">1</div>
-                        <div class="content">
-                            <h4>Fundação</h4>
-                            <p>O Instituto Social Haniel foi fundado em 15 de setembro de 2019 por um grupo dedicado a promover os princípios da Legalidade, Igualdade, Dignidade da Pessoa Humana e Cidadania.</p>
+                    <div class="timeline__item">
+                        <div class="timeline__marker">1</div>
+                        <div class="timeline__content">
+                            <h3 class="timeline__title">Fundação</h3>
+                            <p class="timeline__text">O Instituto Social Haniel foi fundado em 15 de setembro de 2019 por um grupo dedicado a promover os princípios da Legalidade, Igualdade, Dignidade da Pessoa Humana e Cidadania.</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="circle">2</div>
-                        <div class="content">
-                            <h4>Parcerias Significativas</h4>
-                            <p>Ao longo dos anos, estabelecemos parcerias importantes que nos permitiram ampliar nosso alcance e impacto na comunidade.</p>
+                    <div class="timeline__item">
+                        <div class="timeline__marker">2</div>
+                        <div class="timeline__content">
+                            <h3 class="timeline__title">Parcerias Significativas</h3>
+                            <p class="timeline__text">Ao longo dos anos, estabelecemos parcerias importantes que nos permitiram ampliar nosso alcance e impacto na comunidade.</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="circle">3</div>
-                        <div class="content">
-                            <h4>Debates Públicos</h4>
-                            <p>Contribuímos ativamente para debates públicos, deixando uma marca duradoura em prol da justiça social.</p>
+                    <div class="timeline__item">
+                        <div class="timeline__marker">3</div>
+                        <div class="timeline__content">
+                            <h3 class="timeline__title">Debates Públicos</h3>
+                            <p class="timeline__text">Contribuímos ativamente para debates públicos, deixando uma marca duradoura em prol da justiça social.</p>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <section id="areas-atuacao" class="content">
-                <h3>Áreas de Atuação: Diversidade e Impacto</h3>
-                <div class="cards-areas">
-                    <div class="card-area">
-                        <div class="circle">1</div>
-                        <h4>Artes</h4>
-                        <p>Promovemos e apoiamos todas as categorias artísticas, valorizando a expressão criativa e a diversidade cultural.</p>
-                    </div>
-                    <div class="card-area">
-                        <div class="circle">2</div>
-                        <h4>Assistência Social</h4>
-                        <p>Desenvolvemos programas e iniciativas voltados para a promoção do bem-estar social e o atendimento às necessidades básicas da comunidade.</p>
-                    </div>
-                    <div class="card-area">
-                        <div class="circle">3</div>
-                        <h4>Educação</h4>
-                        <p>Investimos em projetos educacionais inovadores, visando capacitar e empoderar a comunidade, especialmente os jovens.</p>
-                    </div>
-                    <div class="card-area">
-                        <div class="circle">4</div>
-                        <h4>Tecnologia</h4>
-                        <p>Atuamos na área de tecnologia da informação e comunicação, promovendo o acesso e o desenvolvimento de soluções tecnológicas.</p>
-                    </div>
-                </div>
-            </section>
-        </section>
-
-        <section id="servicos" class="content">
-            <h3>Nossos Serviços</h3>
-            <div class="cards">
-                <div class="card">
-                    <h4>Educação</h4>
-                    <p>Oferecemos cursos e workshops para capacitação profissional e pessoal.</p>
-                </div>
-                <div class="card">
-                    <h4>Consultoria</h4>
-                    <p>Consultoria estratégica para empresas e organizações.</p>
-                </div>
-                <div class="card">
-                    <h4>Inovação</h4>
-                    <p>Desenvolvimento de projetos e soluções tecnológicas.</p>
                 </div>
             </div>
         </section>
 
-       <form action="processa_formulario.php" method="POST">
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+        <section id="atuacao" class="section" aria-labelledby="atuacao-heading">
+            <div class="container">
+                <h2 id="atuacao-heading" class="section__title">Áreas de Atuação</h2>
+                <p class="section__subtitle">Diversidade e Impacto Social</p>
+                
+                <div class="cards-grid">
+                    <article class="card">
+                        <div class="card__icon">1</div>
+                        <h3 class="card__title">Artes</h3>
+                        <p class="card__text">Promovemos e apoiamos todas as categorias artísticas, valorizando a expressão criativa e a diversidade cultural.</p>
+                    </article>
+                    
+                    <article class="card">
+                        <div class="card__icon">2</div>
+                        <h3 class="card__title">Assistência Social</h3>
+                        <p class="card__text">Desenvolvemos programas e iniciativas voltados para a promoção do bem-estar social e o atendimento às necessidades básicas da comunidade.</p>
+                    </article>
+                    
+                    <article class="card">
+                        <div class="card__icon">3</div>
+                        <h3 class="card__title">Educação</h3>
+                        <p class="card__text">Investimos em projetos educacionais inovadores, visando capacitar e empoderar a comunidade, especialmente os jovens.</p>
+                    </article>
+                    
+                    <article class="card">
+                        <div class="card__icon">4</div>
+                        <h3 class="card__title">Tecnologia</h3>
+                        <p class="card__text">Atuamos na área de tecnologia da informação e comunicação, promovendo o acesso e o desenvolvimento de soluções tecnológicas.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <label for="email">E-mail:</label>
-    <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+        <section id="servicos" class="section section--alt" aria-labelledby="servicos-heading">
+            <div class="container">
+                <h2 id="servicos-heading" class="section__title">Nossos Serviços</h2>
+                
+                <div class="services">
+                    <article class="service">
+                        <i class="service__icon fas fa-graduation-cap" aria-hidden="true"></i>
+                        <h3 class="service__title">Educação</h3>
+                        <p class="service__text">Oferecemos cursos e workshops para capacitação profissional e pessoal em diversas áreas do conhecimento.</p>
+                    </article>
+                    
+                    <article class="service">
+                        <i class="service__icon fas fa-briefcase" aria-hidden="true"></i>
+                        <h3 class="service__title">Consultoria</h3>
+                        <p class="service__text">Consultoria estratégica especializada para empresas, organizações e iniciativas sociais.</p>
+                    </article>
+                    
+                    <article class="service">
+                        <i class="service__icon fas fa-lightbulb" aria-hidden="true"></i>
+                        <h3 class="service__title">Inovação</h3>
+                        <p class="service__text">Desenvolvimento de projetos e soluções tecnológicas para problemas sociais e comunitários.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <label for="mensagem">Mensagem:</label>
-    <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem" required></textarea>
+<!-- Adicione esta seção antes da seção de contato no index.html -->
+<section id="cursos" class="section section--alt" aria-labelledby="cursos-heading">
+    <div class="container">
+        <h2 id="cursos-heading" class="section__title">Nossos Cursos</h2>
+        <p class="section__subtitle">Capacitação profissional e desenvolvimento pessoal</p>
+        
+        <div class="cursos-grid">
+            <!-- Curso 1 -->
+            <article class="curso-card">
+                <div class="curso-card__image">
+                    <img src="img/curso-tecnologia.jpg" alt="Curso de Introdução à Tecnologia" loading="lazy">
+                </div>
+                <div class="curso-card__content">
+                    <h3 class="curso-card__title">Introdução à Tecnologia</h3>
+                    <div class="curso-card__meta">
+                        <span class="curso-card__duration"><i class="far fa-clock"></i> 40 horas</span>
+                        <span class="curso-card__level">Iniciante</span>
+                    </div>
+                    <p class="curso-card__description">Aprenda os conceitos básicos de informática, internet e ferramentas digitais essenciais para o mercado de trabalho.</p>
+                     <div class="curso-card__footer">
+                        <a href="cadastro.html" class="btn btn--small btn--primary">Inscreva-se</a>
+                        <a href="#curso-detalhe-1" class="btn btn--small btn--outline">Saiba mais</a>
+                     </div>
+                </div>
+            </article>
 
-    <button type="submit">Enviar</button>
-</form>
+            <!-- Curso 2 -->
+            <article class="curso-card">
+                <div class="curso-card__image">
+                    <img src="img/curso-artes.jpg" alt="Curso de Arte e Cultura" loading="lazy">
+                </div>
+                <div class="curso-card__content">
+                    <h3 class="curso-card__title">Arte e Cultura Comunitária</h3>
+                    <div class="curso-card__meta">
+                        <span class="curso-card__duration"><i class="far fa-clock"></i> 60 horas</span>
+                        <span class="curso-card__level">Intermediário</span>
+                    </div>
+                    <p class="curso-card__description">Explore técnicas artísticas e desenvolva projetos culturais para transformação social em sua comunidade.</p>
+                    <div class="curso-card__footer">
+                        <a href="cadastro.html" class="btn btn--small btn--primary">Inscreva-se</a>
+                        <a href="#curso-detalhe-2" class="btn btn--small btn--outline">Saiba mais</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Curso 3 -->
+            <article class="curso-card">
+                <div class="curso-card__image">
+                    <img src="img/curso-assistencia.jpg" alt="Curso de Assistência Social" loading="lazy">
+                </div>
+                <div class="curso-card__content">
+                    <h3 class="curso-card__title">Assistência Social Básica</h3>
+                    <div class="curso-card__meta">
+                        <span class="curso-card__duration"><i class="far fa-clock"></i> 80 horas</span>
+                        <span class="curso-card__level">Intermediário</span>
+                    </div>
+                    <p class="curso-card__description">Formação para atuação em projetos sociais com foco em direitos humanos e políticas públicas.</p>
+                    <div class="curso-card__footer">
+                        <a href="cadastro.html" class="btn btn--small btn--primary">Inscreva-se</a>
+                        <a href="#curso-detalhe-3" class="btn btn--small btn--outline">Saiba mais</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Curso 4 -->
+            <article class="curso-card">
+                <div class="curso-card__image">
+                    <img src="img/curso-programacao.jpg" alt="Curso de Programação Web" loading="lazy">
+                </div>
+                <div class="curso-card__content">
+                    <h3 class="curso-card__title">Programação Web Básica</h3>
+                    <div class="curso-card__meta">
+                        <span class="curso-card__duration"><i class="far fa-clock"></i> 120 horas</span>
+                        <span class="curso-card__level">Avançado</span>
+                    </div>
+                    <p class="curso-card__description">Aprenda HTML, CSS e JavaScript para criar seus primeiros sites e aplicações web.</p>
+                    <div class="curso-card__footer">
+                        <a href="cadastro.html" class="btn btn--small btn--primary">Inscreva-se</a>
+                        <a href="#curso-detalhe-4" class="btn btn--small btn--outline">Saiba mais</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="text-center" style="margin-top: 2rem;">
+            <a href="cursos.html" class="btn btn--primary">Ver todos os cursos</a>
+        </div>
+    </div>
+</section>
+
+        <section id="contato" class="section" aria-labelledby="contato-heading">
+            <div class="container">
+                <h2 id="contato-heading" class="section__title">Entre em Contato</h2>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3 class="contact-info__title">Informações de Contato</h3>
+                        <address class="contact-info__content">
+                            <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Endereço: Rua Helvettia 444 - Campos Eliseos</p>
+                            <p><i class="fas fa-phone" aria-hidden="true"></i> Telefone: <a href="(11) 93265-8714">(11) 93265-8714</a></p>
+                            <p><i class="fas fa-envelope" aria-hidden="true"></i> Email: <a href="institutohaniel24@gmail.com">institutohaniel24@gmail.com</a></p>
+                        </address>
+                        
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/institutosocialhaniel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/people/Instituto-Social-Haniel/61559610762906/?is_tour_dismissed" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                
+                        <div class="form-group">
+                        <form id="form-group" class="form-group" action="https://formsubmit.co/institutohaniel24@gmail.com" method="POST">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefone">Telefone:</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                        </div>
+                         
+                        <div class="form-group">
+                            <label for="assunto">Assunto:</label>
+                            <select id="assunto" name="assunto">
+                                <option value="">Selecione um assunto</option>
+                                <option value="informacao">Informações</option>
+                                <option value="parceria">Parcerias</option>
+                                <option value="voluntariado">Voluntariado</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--block">Enviar Mensagem</button>
+                </div>
+            </div>
+        </form>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Instituto HANIEL. Todos os direitos reservados.</p>
-        <nav>
-            <a class="links" href="https://www.instagram.com/institutosocialhaniel/" target="_blank">Instagram</a>
-            <a class="links" href="https://www.facebook.com/people/Instituto-Social-Haniel/61559610762906/?is_tour_dismissed" target="_blank">Facebook</a>
-        </nav>
+    <footer class="footer" aria-labelledby="footer-heading">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h3 id="footer-heading" class="footer__title">Instituto HANIEL</h3>
+                    <p class="footer__text">Transformando vidas por meio de educação, pesquisa e inovação.</p>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Links Rápidos</h4>
+                    <ul class="footer__links">
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#atuacao">Áreas de Atuação</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                        <li><a href="cadastro.html">Cadastro</a></li>
+                        <li><a href="cursos.html">Cursos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Contato</h4>
+                    <address class="footer__address">
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Rua Helvettia 444 - Campos Eliseos</p>
+                        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+551234567890">(11) 93265-8714</a></p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="institutohaniel24@gmail.com">institutohaniel24@gmail.com</a></p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2025 Instituto HANIEL. Todos os direitos reservados.</p>
+                <div class="footer__social">
+                    <a href="https://www.instagram.com/institutosocialhaniel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/people/Instituto-Social-Haniel/61559610762906/?is_tour_dismissed" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="index.js"></script>
+    <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js" defer></script>
+
+   <!-- Modal de Detalhes do Curso -->
+<div id="cursoModal" class="modal">
+  <div class="modal__content">
+    <button class="modal__close">&times;</button>
+    <div class="modal__header">
+      <h3 id="modalCursoTitulo"></h3>
+      <div class="modal__meta">
+        <span id="modalCursoDuracao"></span>
+        <span id="modalCursoNivel"></span>
+        <span id="modalCursoCategoria"></span>
+      </div>
+    </div>
+    <div class="modal__body">
+      <div class="modal__image">
+        <img id="modalCursoImagem" src="" alt="">
+      </div>
+      <div class="modal__description">
+        <h4>Sobre o Curso</h4>
+        <p id="modalCursoDescricao"></p>
+        
+        <h4>Conteúdo Programático</h4>
+        <ul id="modalCursoConteudo"></ul>
+        
+        <h4>Pré-requisitos</h4>
+        <p id="modalCursoPreRequisitos"></p>
+        
+        <h4>Investimento</h4>
+        <p id="modalCursoInvestimento"></p>
+      </div>
+    </div>
+    <div class="modal__footer">
+      <a href="cadastro.html" class="btn btn--primary">Inscreva-se</a>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
