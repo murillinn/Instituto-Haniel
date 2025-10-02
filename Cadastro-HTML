@@ -1,102 +1,218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="cadastro.css">
-    
+    <meta name="description" content="Cadastro no Instituto HANIEL - Acesse cursos e serviços">
+    <title>Cadastro | Instituto HANIEL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-<section id="acesso" class="content">
-    <div class="auth-container">
-        <div class="auth-tabs">
-            <button class="tab-btn active" data-tab="login">Login</button>
-            <button class="tab-btn" data-tab="register">Cadastro</button>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="logo">
+                    <h1>
+                        <a href="index.html">
+                            Instituto <span>HANIEL</span>
+                            <span class="sr-only">Página inicial</span>
+                        </a>
+                    </h1>
+                </div>
+
+                <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+
+                <nav class="navbar" aria-label="Navegação principal">
+                    <ul id="nav-menu" class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Início</a></li>
+                        <li><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+                        <li><a href="cursos.html" class="nav-link">Cursos</a></li>
+                        <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+                        <li><a href="cadastro.html" class="btn btn--small btn--active">Minha Conta</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
+    </header>
 
-        <div class="auth-forms">
-            <form id="login-form" class="auth-form active">
-                <h3>Faça seu Login</h3>
-                <div class="form-group">
-                    <label for="login-email">E-mail</label>
-                    <input type="email" id="login-email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="login-password">Senha</label>
-                    <input type="password" id="login-password" name="password" required>
-                    <div class="password-toggle">
-                        <i class="toggle-icon">👁️</i>
+    <main id="main-content" class="auth-page">
+        <section class="section">
+            <div class="container">
+                <div class="auth-container">
+                    <!-- Formulário de Login -->
+                    <div class="auth-form" id="login-form">
+                        <h2 class="section__title">Acesse sua conta</h2>
+                        
+                            <div class="form-group">
+                            <form id="loginForm" class="form-group" action="https://formsubmit.co/institutohaniel24@gmail.com" method="POST">
+                                <label for="login-email">E-mail:</label>
+                                <input type="email" id="login-email" name="email" placeholder="seu@email.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="login-password">Senha:</label>
+                                <div class="password-input">
+                                    <input type="password" id="login-password" name="password" placeholder="Sua senha" required>
+                                    <button type="button" class="toggle-password" aria-label="Mostrar senha">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+                                </div>
+                                <a href="#recover" class="forgot-password">Esqueceu sua senha?</a>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary btn--block">Entrar</button>
+                            
+                            <div class="auth-switch">
+                                <p>Não tem uma conta? <a href="#register" class="switch-link">Cadastre-se</a></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Formulário de Cadastro -->
+                    <div class="auth-form" id="register-form" style="display: none;">
+                        <h2 class="section__title">Crie sua conta</h2>
+                        
+                            <div class="form-row">
+                                <div class="form-group">
+                                <form id="form-group" class="form-group" action="https://formsubmit.co/institutohaniel24@gmail.com" method="POST">
+                                    <label for="register-name">Nome Completo:</label>
+                                    <input type="text" id="register-name" name="name" placeholder="Seu nome completo" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="register-cpf">CPF:</label>
+                                    <input type="text" id="register-cpf" name="cpf" placeholder="000.000.000-00" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="register-email">E-mail:</label>
+                                <input type="email" id="register-email" name="email" placeholder="seu@email.com" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="register-password">Senha:</label>
+                                    <div class="password-input">
+                                        <input type="password" id="register-password" name="password" placeholder="Crie uma senha" required>
+                                        <button type="button" class="toggle-password" aria-label="Mostrar senha">
+                                            <i class="far fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="register-confirm">Confirme a Senha:</label>
+                                    <div class="password-input">
+                                        <input type="password" id="register-confirm" name="confirm" placeholder="Repita a senha" required>
+                                        <button type="button" class="toggle-password" aria-label="Mostrar senha">
+                                            <i class="far fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="register-phone">Telefone:</label>
+                                <input type="tel" id="register-phone" name="phone" placeholder="(00) 00000-0000" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="register-birth">Data de Nascimento:</label>
+                                <input type="date" id="register-birth" name="birth" required>
+                            </div>
+                            
+                            <div class="form-group form-group--checkbox">
+                                <input type="checkbox" id="register-terms" name="terms" required>
+                                <label for="register-terms">Li e aceito os <a href="#" target="_blank">Termos de Uso</a> e <a href="#" target="_blank">Política de Privacidade</a></label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary btn--block">Cadastrar</button>
+                            
+                            <div class="auth-switch">
+                                <p>Já tem uma conta? <a href="#login" class="switch-link">Faça login</a></p>
+                            </div>
+                        </form>
+                         </div>
+                        
+
+                    <!-- Recuperação de Senha -->
+                    <div class="auth-form" id="recover-form" style="display: none;">
+                        <h2 class="section__title">Recuperar Senha</h2>
+                        
+                            <div class="form-group">
+                            <form id="recoverForm" class="form" action="https://formsubmit.co/institutohaniel24@gmail.com" method="POST">
+                                <label for="recover-email">E-mail:</label>
+                                <input type="email" id="recover-email" name="email" placeholder="seu@email.com" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary btn--block">Enviar Link de Recuperação</button>
+                            
+                            <div class="auth-switch">
+                                <p>Lembrou sua senha? <a href="#login" class="switch-link">Faça login</a></p>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="form-options">
-                    <label>
-                        <input type="checkbox" name="remember"> Lembrar-me
-                    </label>
-                    <a href="#recuperar-senha" class="forgot-password">Esqueceu a senha?</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h3 class="footer__title">Instituto HANIEL</h3>
+                    <p class="footer__text">Transformando vidas por meio de educação, pesquisa e inovação.</p>
                 </div>
-                <button type="submit" class="btn">Entrar</button>
-                <div class="social-login">
-                    <p>Ou entre com:</p>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon google">G</a>
-                        <a href="#" class="social-icon facebook">F</a>
-                    </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Links Rápidos</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="index.html#sobre">Sobre Nós</a></li>
+                        <li><a href="cursos.html">Cursos</a></li>
+                        <li><a href="index.html#contato">Contato</a></li>
+                    </ul>
                 </div>
-            </form>
-            <form id="register-form" class="auth-form">
-                <h3>Crie sua Conta</h3>
-                <div class="form-group">
-                    <label for="register-name">Nome Completo</label>
-                    <input type="text" id="register-name" name="name" required>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Contato</h4>
+                    <address class="footer__address">
+                        <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - Cidade/Estado</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+551234567890">(12) 3456-7890</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:contato@institutohaniel.org.br">contato@institutohaniel.org.br</a></p>
+                    </address>
                 </div>
-                <div class="form-group">
-                    <label for="register-email">E-mail</label>
-                    <input type="email" id="register-email" name="email" required>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2025 Instituto HANIEL. Todos os direitos reservados.</p>
+                <div class="footer__social">
+                    <a href="https://www.instagram.com/institutosocialhaniel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/people/Instituto-Social-Haniel/61559610762906/?is_tour_dismissed" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
                 </div>
-                <div class="form-group">
-                    <label for="register-password">Senha</label>
-                    <input type="password" id="register-password" name="password" required>
-                    <div class="password-strength">
-                        <span class="strength-bar"></span>
-                        <span class="strength-bar"></span>
-                        <span class="strength-bar"></span>
-                        <span class="strength-text"></span>
-                    </div>
-                    <div class="password-toggle">
-                        <i class="toggle-icon">👁️</i>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="register-confirm-password">Confirmar Senha</label>
-                    <input type="password" id="register-confirm-password" name="confirm-password" required>
-                </div>
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" name="terms" required> Eu concordo com os <a href="#termos">Termos de Serviço</a> e <a href="#politica">Política de Privacidade</a>
-                    </label>
-                </div>
-                <button type="submit" class="btn">Cadastrar</button>
-            </form>
+            </div>
         </div>
-    </div>
+    </footer>
 
-    <div id="recovery-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h3>Recuperar Senha</h3>
-            <form id="recovery-form">
-                <div class="form-group">
-                    <label for="recovery-email">Digite seu e-mail cadastrado</label>
-                    <input type="email" id="recovery-email" name="email" required>
-                </div>
-                <button type="submit" class="btn">Enviar Link de Recuperação</button>
-            </form>
-        </div>
-    </div>
-</section>
+    <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-<script src="scripts.js"></script>
-
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
 </body>
 </html>
